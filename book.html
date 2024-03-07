@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now</title>
+    <style>
+        @font-face {
+            font-family: 'Raleway';
+            src: url('./Raleway-Regular.ttf') format('truetype');
+        }
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #de441030;
+        }        
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            }
+
+        .book-form {
+            padding: 20px;
+            background-color: #eee;
+            margin: 20px;
+            box-shadow: 2px 2px 40px #000;
+            width: 50%;
+            align-self: center;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        
+        .book-form h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .book-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .book-form input {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .book-form #inputButton {
+            padding: 10px 20px;
+            background-color: rgb(222, 67, 16);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 20px;
+            font-size: 1.2rem;
+        }
+        .book-form #inputButton:hover {
+            background-color: #ffffff;
+            color: rgb(222, 67, 16);
+        }
+
+        .destinationtitle {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: rgb(222, 67, 16);
+          }
+        .destinations {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+          }
+
+        .destination-box {
+            width: 20%;
+            height: 20rem;
+            margin-bottom: 30px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            box-shadow: 2px 2px 40px #000;
+            border-radius: 10px;
+        }
+
+        .destination-box h3 {
+            margin: 10px 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .destination-box p {
+            margin: 5px 0;
+            color: #fff;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .destination-box button {
+            padding: 5px 10px;
+            background-color: #de4310;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            align-self: flex-start;
+            border-radius: 20px;
+        }
+
+        .destination-box button:hover {
+          background-color: #ffffff;
+          color: rgb(222, 67, 16);
+        }
+
+        .destination-selection {
+            padding: 10px;
+            background-color: #eee;
+            text-align: center;
+        }
+
+        #destination-select {
+            width: 50%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        #select-button {
+            padding: 5px 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+  <main>
+      <div class="book-form">
+          <form action="" method="post" id="bookingForm">
+              <h2>Book your trip</h2>
+              <label for="name">Name:</label>
+              <input type="text" name="name" id="name" required>
+              <br>
+              <label for="email">Email:</label>
+              <input type="email" name="email" id="email" required>
+              <br>
+              <label for="phone">Phone:</label>
+              <input type="tel" name="phone" id="phone" required>
+              <br>
+              <label for="people">Number of people:</label>
+              <input type="number" name="people" id="people" required>
+              <br>
+              <label for="destination-select">Select your destination:</label>
+              <select id="destination-select">
+                  <option value="kyoto">Kyoto, Japan</option>
+                  <option value="reykjavik">Reykjavik, Iceland</option>
+                  <option value="barcelona">Barcelona, Spain</option>
+                  <option value="sydney">Sydney, Australia</option>
+                  <option value="marrakech">Marrakech, Morocco</option>
+                  <option value="rio">Rio de Janeiro, Brazil</option>
+                  <option value="cape-town">Cape Town, South Africa</option>
+                  <option value="quebec-city">Quebec City, Canada</option>
+                  <option value="santorini">Santorini, Greece</option>
+                  <option value="dubai">Dubai, UAE</option>
+                  <option value="bora-bora">Bora Bora, French Polynesia</option>
+                  <option value="machu-picchu">Machu Picchu, Peru</option>
+                  <option value="rome">Rome, Italy</option>
+                  <option value="new-york-city">New York City, USA</option>
+                  <option value="bangkok">Bangkok, Thailand</option>
+                  <option value="cairo">Cairo, Egypt</option>
+                  <option value="copenhagen">Copenhagen, Denmark</option>
+                  <option value="dublin">Dublin, Ireland</option>
+                  <option value="cancun">Cancun, Mexico</option>
+                  <option value="cappadocia">Cappadocia, Turkey</option>
+                  <option value="havana">Havana, Cuba</option>
+                  <option value="seychelles">Seychelles</option>
+                  <option value="amsterdam">Amsterdam, Netherlands</option>
+                  <option value="zanzibar">Zanzibar, Tanzania</option>
+                  <option value="agra">Agra, India</option>
+                  <option value="bali">Bali, Indonesia</option>
+                  <option value="edinburgh">Edinburgh, Scotland</option>
+                  <option value="hanoi">Hanoi, Vietnam</option>
+                  <option value="tasili">Tasili, Algeria</option>
+                  <option value="prague">Prague, Czech Republic</option>
+              </select>
+              <input type="submit" value="Book" id="inputButton">
+          </form>
+      </div>
+
+      <h1 class="destinationtitle">OUR DESTINATIONS</h1>
+
+      <div class="destinations">
+        <div class="destination-box" style="background-image: url(./kyoto.jpg); background-size: cover;">
+          <h3>Kyoto, Japan</h3>
+          <p>Price: $500</p>
+          <p>Dates: June 1 - June 7, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1582541185470-2e7a6c0d8d14?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);background-size: cover;">
+          <h3>Reykjavik, Iceland</h3>
+          <p>Price: $600</p>
+          <p>Dates: June 8 - June 14, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmFyY2Vsb25hfGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Barcelona, Spain</h3>
+          <p>Price: $700</p>
+          <p>Dates: June 15 - June 21, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1590716209211-ea74d5f63573?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fHN5ZG5leXxlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Sydney, Australia</h3>
+          <p>Price: $800</p>
+          <p>Dates: June 22 - June 28, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1640263408299-8972236d0590?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fE1hcnJha2VjaHxlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Marrakech, Morocco</h3>
+          <p>Price: $900</p>
+          <p>Dates: June 29 - July 5, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1544989164-31dc3c645987?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UmlvJTIwZGUlMjBKYW5laXJvfGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Rio de Janeiro, Brazil</h3>
+          <p>Price: $1000</p>
+          <p>Dates: July 6 - July 12, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1529528070131-eda9f3e90919?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fENhcGUlMjBUb3dufGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Cape Town, South Africa</h3>
+          <p>Price: $1100</p>
+          <p>Dates: July 13 - July 19, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1582303322622-d85946b1d06a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFF1ZWJlYyUyMENpdHl8ZW58MHx8MHx8fDA%3D);background-size: cover;">
+          <h3>Quebec City, Canada</h3>
+          <p>Price: $1200</p>
+          <p>Dates: July 20 - July 26, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U2FudG9yaW5pfGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Santorini, Greece</h3>
+          <p>Price: $1300</p>
+          <p>Dates: July 27 - August 2, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1546412414-e1885259563a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8RHViYWl8ZW58MHx8MHx8fDA%3D);background-size: cover;">
+          <h3>Dubai, UAE</h3>
+          <p>Price: $1400</p>
+          <p>Dates: August 3 - August 9, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1662283804757-ef81acd5471e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDB8fEJvcmElMjBCb3JhfGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Bora Bora, French Polynesia</h3>
+          <p>Price: $1500</p>
+          <p>Dates: August 10 - August 16, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1593461068733-7dffdd347dcd?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);background-size: cover;">
+          <h3>Machu Picchu, Peru</h3>
+          <p>Price: $1600</p>
+          <p>Dates: August 17 - August 23, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1569230516306-5a8cb5586399?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fFJvbWV8ZW58MHx8MHx8fDA%3D);background-size: cover;">
+          <h3>Rome, Italy</h3>
+          <p>Price: $1700</p>
+          <p>Dates: August 24 - August 30, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1543716091-a840c05249ec?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TmV3JTIwWW9yayUyMENpdHl8ZW58MHx8MHx8fDA%3D);background-size: cover;">
+          <h3>New York City, USA</h3>
+          <p>Price: $1800</p>
+          <p>Dates: August 31 - September 6, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1546228139-87f5312cac42?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fEJhbmdrb2t8ZW58MHx8MHx8fDA%3D);background-size: cover;">
+          <h3>Bangkok, Thailand</h3>
+          <p>Price: $1900</p>
+          <p>Dates: September 7 - September 13, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1553993500-d70955b75b5c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fENhaXJvfGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Cairo, Egypt</h3>
+          <p>Price: $2000</p>
+          <p>Dates: September 14 - September 20, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1552560880-2482cef14240?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Q29wZW5oYWdlbnxlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Copenhagen, Denmark</h3>
+          <p>Price: $2100</p>
+          <p>Dates: September 21 - September 27, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1586724229931-cd4cd3b50ddc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fER1YmxpbnxlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Dublin, Ireland</h3>
+          <p>Price: $2200</p>
+          <p>Dates: September 28 - October 4, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1571268493589-ec822cf5206c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fENhbmN1bnxlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Cancun, Mexico</h3>
+          <p>Price: $2300</p>
+          <p>Dates: October 5 - October 11, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://plus.unsplash.com/premium_photo-1663012996416-c85e55a67e78?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Q2FwcGFkb2NpYXxlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Cappadocia, Turkey</h3>
+          <p>Price: $2400</p>
+          <p>Dates: October 12 - October 18, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1568322445389-495f4a7d20d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEhhdmFuYXxlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Havana, Cuba</h3>
+          <p>Price: $2500</p>
+          <p>Dates: October 19 - October 25, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1626085263072-d503e3dea011?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8U2V5Y2hlbGxlc3xlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Seychelles</h3>
+          <p>Price: $2600</p>
+          <p>Dates: October 26 - November 1, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1580996378027-23040f16f157?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QW1zdGVyZGFtfGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Amsterdam, Netherlands</h3>
+          <p>Price: $2700</p>
+          <p>Dates: November 2 - November 8, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1628531895969-df353541bafe?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8WmFuemliYXJ8ZW58MHx8MHx8fDA%3D);background-size: cover;">
+          <h3>Zanzibar, Tanzania</h3>
+          <p>Price: $2800</p>
+          <p>Dates: November 9 - November 15, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QWdyYXxlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Agra, India</h3>
+          <p>Price: $2900</p>
+          <p>Dates: November 16 - November 22, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QmFsaXxlbnwwfHwwfHx8MA%3D%3D);background-size: cover;">
+          <h3>Bali, Indonesia</h3>
+          <p>Price: $3000</p>
+          <p>Dates: November 23 - November 29, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1569668444050-b7bc2bfec0c7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8RWRpbmJ1cmdofGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Edinburgh, Scotland</h3>
+          <p>Price: $3100</p>
+          <p>Dates: November 30 - December 6, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1592202178023-2dbb4527b006?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8SGFub2l8ZW58MHx8MHx8fDA%3D);background-size: cover;">
+          <h3>Hanoi, Vietnam</h3>
+          <p>Price: $3200</p>
+          <p>Dates: December 7 - December 13, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1704990095546-da2a7fb453ac?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzB8fGFsZ2VyaWFuJTIwZGVzZXJ0fGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Tasili, Algeria</h3>
+          <p>Price: $3300</p>
+          <p>Dates: December 14 - December 20, 2024</p>
+          <button>Details</button>
+      </div>
+
+      <div class="destination-box" style="background-image: url(https://images.unsplash.com/photo-1503410781609-75b1d892dd28?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8UHJhZ3VlfGVufDB8fDB8fHww);background-size: cover;">
+          <h3>Prague, Czech Republic</h3>
+          <p>Price: $3400</p>
+          <p>Dates: December 21 - December 27, 2024</p>
+          <button>Details</button>
+      </div>
+      </div>
+  </main>
+  <script>
+    document.getElementById("bookingForm").addEventListener("submit", function (event) {
+        // Prevent the default form submission
+        event.preventDefault();
+
+        // Display confirmation message
+        displayConfirmationMessage();
+    });
+
+    function displayConfirmationMessage() {
+        // Clear the main content
+        document.querySelector(".destinations").innerHTML = "";
+
+        // Create a confirmation message element
+        var confirmationMessage = document.createElement("div");
+        confirmationMessage.classList.add("confirmation-message");
+        confirmationMessage.innerHTML = "<h2>Reservation Confirmed!</h2><p>Check your email for details.</p>";
+
+        // Append the confirmation message to the main content
+        document.querySelector(".destinations").appendChild(confirmationMessage);
+    }
+</script>
+</body>
+
+</html>
+

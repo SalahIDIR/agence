@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        @font-face {
+            font-family: 'Raleway';
+            src: url('./Raleway-Regular.ttf') format('truetype');
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Raleway', sans-serif;
+            background-image: url('./contactbackground.jpg');
+            background-size: cover;
+        }
+
+        .Contact {
+            padding: 20px;
+            background-color: #eeeeeec3;
+            margin: 20px;
+            box-shadow: 2px 2px 40px #000;
+            width: 30%;
+            align-self: center;
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        
+        .Contact h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 2rem;
+            color: rgb(222, 67, 16);
+        }
+
+        .Contact label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .Contact input {
+            width: 95%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        
+
+        .Contact h1 {
+            font-size: 3em;
+            margin: 20px;
+        }
+
+        .Contact p {
+            font-size: 1.5em;
+            margin: 20px;
+        }
+
+        .Contact textarea {
+            width: 95%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+
+        .Contact button {
+            padding: 10px 20px;
+            background-color: #6c6c6c;
+            color: #fff;
+            border: none;
+            font-size: large;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .Contact button:hover {
+            background-color: rgb(222, 67, 16);
+        }
+
+        .socialmedia {
+            padding: 6rem;
+            padding-top: 1rem;
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+        }
+
+        .socialmedia a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .socialmedia a:hover .fa-facebook-official {
+            color: blue;
+        }
+
+        .socialmedia a:hover .fa-instagram {
+            color: orange;
+        }
+
+        .socialmedia a:hover .fa-twitter {
+            color: blue;
+        }
+
+        .socialmedia a:hover .fa-youtube-play {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="Contact">
+        <form action="" method="post" id="bookingForm" onsubmit="return showThankYouMessage()">
+            <h1>Contact Us</h1>
+            <p>Feel free to contact us at any time. We are here to help you.</p>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            <br>
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+            <br>
+            <button type="submit">Send</button>
+            <div id="thankYouMessage" style="display: none; text-align: center; color: green; font-size: 1.5em; margin-top: 20px;">
+                Thanks for contacting us! We will respond as soon as possible.
+            </div>
+            
+    </div>
+
+    <div class="socialmedia">
+        <a href="#"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-youtube-play fa-3x" aria-hidden="true"></i></a>
+      </div>
+
+      <script>
+        function showThankYouMessage() {
+            // Display the thank-you message
+            document.getElementById("thankYouMessage").style.display = "block";
+            
+            // Prevent the form from submitting (remove this line if you want the form to submit)
+            return false;
+        }
+    </script>
+</body>
+</html>
